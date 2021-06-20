@@ -12,13 +12,12 @@ func main() {
 
 func bubble_sort(arr []int) []int {
 	arr_len := len(arr)
-	swapped := true
-	for swapped {
-		swapped = false
-		for x := 0; x < arr_len-1; x += 1 {
-			if arr[x] > arr[x+1] {
-				arr[x], arr[x+1] = arr[x+1], arr[x]
-				swapped = true
+	for x := 0; x < arr_len; x += 1 {
+		for y := 0; y < arr_len-1; y += 1 {
+			if arr[y] > arr[y+1] {
+				temp := arr[y]
+				arr[y] = arr[y+1]
+				arr[y+1] = temp
 			}
 		}
 	}
